@@ -6,6 +6,6 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/reposito
   echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
   apk --update add privoxy@edge tor@testing runit@testing
 
-COPY runit /runit
+COPY service /etc/service/
 
-CMD ["runsvdir", "/runit"]
+CMD ["runsvdir", "/etc/service"]
