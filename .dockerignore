@@ -1,0 +1,5 @@
+*~
+*.swp
+.git*
+.vagrant*
+*.DS_Store
