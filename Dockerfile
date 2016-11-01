@@ -8,4 +8,5 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' \
 
 COPY service /etc/service/
 
+ENTRYPOINT ["/entrypoint"]
 CMD ["runsvdir", "/etc/service"]
