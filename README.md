@@ -7,7 +7,21 @@ docker run -d -p 8118:8118 -p 9050:9050 rdsubhas/tor-privoxy-alpine
 curl --proxy localhost:8118 https://www.google.com
 ```
 
-And that's it! Read the accompanying [blog post](https://medium.com/@rdsubhas/docker-image-with-tor-privoxy-and-a-process-manager-under-15-mb-c9e344111b61) for more details.
+Read the accompanying [blog post](https://medium.com/@rdsubhas/docker-image-with-tor-privoxy-and-a-process-manager-under-15-mb-c9e344111b61) for more details.
+
+## Configuration
+
+It is possible to define configuration options for the Tor daemon using env variables. Just define a variable prefixed with `TOR_`, as shown in this example:
+
+```
+docker run -d -p 8118:8118 -p 9050:9050 -e TOR_ExitNodes="{de}" rdsubhas/tor-privoxy-alpine
+```
+
+The `torrc` will now contain:
+
+```
+ExitNodes {de}
+```
 
 ## Known Issues
 
