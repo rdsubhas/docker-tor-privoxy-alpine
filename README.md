@@ -1,5 +1,7 @@
 # tor-privoxy-alpine
 
+[![](https://badge.imagelayers.io/rdsubhas/tor-privoxy-alpine:latest.svg)](https://imagelayers.io/?images=rdsubhas/tor-privoxy-alpine:latest 'Get your own badge on imagelayers.io')
+
 The smallest (**15 MB**) docker image with Tor and Privoxy on Alpine Linux.
 
 ```
