@@ -1,6 +1,6 @@
 # tor-privoxy-alpine
 
-The smallest (**15 MB**) docker image with Tor and Privoxy on Alpine Linux.
+The smallest (**15 MB**) docker image with [Tor](https://www.torproject.org/) through [Privoxy](http://www.privoxy.org/), a *privacy enhancing proxy*, based on [Alpine Linux](https://registry.hub.docker.com/_/alpine).
 
 ```
 docker run -d -p 8118:8118 -p 9050:9050 rdsubhas/tor-privoxy-alpine
@@ -8,6 +8,8 @@ curl --proxy localhost:8118 https://www.google.com
 ```
 
 And that's it! Read the accompanying [blog post](https://medium.com/@rdsubhas/docker-image-with-tor-privoxy-and-a-process-manager-under-15-mb-c9e344111b61) for more details.
+
+To customize the configuration, add volume mount like: `-v $PWD/torrc:/etc/tor/torrc:ro` (see default [sample `torrc` file](https://gitweb.torproject.org/tor.git/plain/src/config/torrc.sample.in)). You may also want to mount what you've set a Tor `DataDirectory` (see [Tor Manual](https://www.torproject.org/docs/tor-manual.html.en#_files) for details of each sub-directory) to avoid losing caches and identities when you restart your container.
 
 ## Known Issues
 
