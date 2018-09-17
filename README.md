@@ -4,7 +4,7 @@ The smallest (**15 MB**) docker image with Tor and Privoxy on Alpine Linux.
 
 ```
 docker run -d -p 8118:8118 -p 9050:9050 rdsubhas/tor-privoxy-alpine
-curl --proxy localhost:8118 https://www.google.com
+curl --no-buffer --proxy localhost:8118 https://check.torproject.org | grep "Congratulations. This browser is configured to use Tor."
 ```
 
 And that's it! Read the accompanying [blog post](https://medium.com/@rdsubhas/docker-image-with-tor-privoxy-and-a-process-manager-under-15-mb-c9e344111b61) for more details.
